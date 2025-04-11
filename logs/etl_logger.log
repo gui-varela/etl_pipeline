@@ -1,0 +1,237 @@
+2025-04-10 20:44:36,781 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 20:44:36,781 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 20:44:37,130 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 20:44:37,401 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 20:44:37,401 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 20:44:37,401 | INFO | 💾 Gravando dados no banco...
+2025-04-10 20:44:37,444 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 20:44:48,093 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 20:44:48,093 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 20:44:48,630 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 20:44:48,925 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 20:44:48,925 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 20:44:48,925 | INFO | 💾 Gravando dados no banco...
+2025-04-10 20:44:48,953 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 21:03:25,642 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:03:25,642 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:03:26,424 | ERROR | ❌ Erro durante o processo ETL:
+Traceback (most recent call last):
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/main.py", line 23, in main
+    league_id, season = get_brasileirao_league_id()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 29, in get_brasileirao_league_id
+    raise ValueError("Brasileirão não encontrado.")
+ValueError: Brasileirão não encontrado.
+2025-04-10 21:04:12,753 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:04:12,754 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:04:12,756 | ERROR | ❌ Erro durante o processo ETL:
+Traceback (most recent call last):
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/main.py", line 23, in main
+    league_id, season = get_brasileirao_league_id()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 24, in get_brasileirao_league_id
+    leagues = get_brazil_leagues()
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 17, in get_brazil_leagues
+    response = requests.get(url, headers=HEADERS, params=params, verify=False)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/models.py", line 367, in prepare
+    self.prepare_url(url, params)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/models.py", line 438, in prepare_url
+    raise MissingSchema(
+    ...<2 lines>...
+    )
+requests.exceptions.MissingSchema: Invalid URL 'None/leagues': No scheme supplied. Perhaps you meant https://None/leagues?
+2025-04-10 21:07:55,806 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:07:55,806 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:07:55,808 | ERROR | ❌ Erro durante o processo ETL:
+Traceback (most recent call last):
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/main.py", line 23, in main
+    league_id, season = get_brasileirao_league_id()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 24, in get_brasileirao_league_id
+    leagues = get_brazil_leagues()
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 17, in get_brazil_leagues
+    response = requests.get(url, headers=HEADERS, params=params, verify=False)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/models.py", line 367, in prepare
+    self.prepare_url(url, params)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/models.py", line 438, in prepare_url
+    raise MissingSchema(
+    ...<2 lines>...
+    )
+requests.exceptions.MissingSchema: Invalid URL 'None/leagues': No scheme supplied. Perhaps you meant https://None/leagues?
+2025-04-10 21:13:23,514 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:13:23,514 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:13:53,531 | ERROR | ❌ Erro durante o processo ETL:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x1049be270>: Failed to resolve 'api.exemplo.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.exemplo.com', port=443): Max retries exceeded with url: /dados/leagues?country=Brazil (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1049be270>: Failed to resolve 'api.exemplo.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/main.py", line 20, in main
+    league_id, season = get_brasileirao_league_id()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 21, in get_brasileirao_league_id
+    leagues = get_brazil_leagues()
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 14, in get_brazil_leagues
+    response = requests.get(url, headers=HEADERS, params=params, verify=False)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.exemplo.com', port=443): Max retries exceeded with url: /dados/leagues?country=Brazil (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x1049be270>: Failed to resolve 'api.exemplo.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-04-10 21:15:02,802 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:15:02,802 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:15:03,637 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 21:15:03,925 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 21:15:03,925 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 21:15:03,926 | INFO | 💾 Gravando dados no banco...
+2025-04-10 21:15:03,956 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 21:15:28,608 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:15:28,609 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:15:28,932 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 21:15:29,216 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 21:15:29,216 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 21:15:29,216 | INFO | 💾 Gravando dados no banco...
+2025-04-10 21:15:29,243 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 21:15:51,461 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:15:51,461 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:15:51,813 | ERROR | ❌ Erro durante o processo ETL:
+Traceback (most recent call last):
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/main.py", line 20, in main
+    league_id, season = get_brasileirao_league_id()
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/guilherme.varela/Documents/safabet/etl_pipeline/extract/api_client.py", line 26, in get_brasileirao_league_id
+    raise ValueError("Brasileirão não encontrado.")
+ValueError: Brasileirão não encontrado.
+2025-04-10 21:34:35,039 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:34:35,040 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:34:35,654 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 21:34:35,934 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 21:34:35,934 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 21:34:35,934 | INFO | 💾 Gravando dados no banco...
+2025-04-10 21:34:35,962 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 21:37:17,168 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:37:17,168 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:37:17,555 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 21:37:17,855 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 21:37:17,856 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 21:37:17,856 | INFO | 💾 Gravando dados no banco...
+2025-04-10 21:37:17,883 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 21:52:45,380 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 21:52:45,380 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 21:52:46,587 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 21:52:46,875 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 21:52:46,876 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 21:52:46,876 | INFO | 💾 Gravando dados no banco...
+2025-04-10 21:52:46,907 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 23:28:40,798 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 23:28:40,799 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 23:28:42,114 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 23:28:42,400 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 23:28:42,400 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 23:28:42,400 | INFO | 💾 Gravando dados no banco...
+2025-04-10 23:28:42,429 | INFO | 🎯 Processo concluído com sucesso.
+2025-04-10 23:47:00,002 | INFO | 🚀 Iniciando ETL do Brasileirão...
+2025-04-10 23:47:00,003 | INFO | 🔍 Obtendo ID da liga e temporada atual...
+2025-04-10 23:47:00,918 | INFO | 📅 Buscando partidas da semana...
+2025-04-10 23:47:01,206 | INFO | ✅ 10 fixtures encontrados.
+2025-04-10 23:47:01,206 | INFO | 🛠️ Transformando dados brutos...
+2025-04-10 23:47:01,206 | INFO | 💾 Gravando dados no banco...
+2025-04-10 23:47:01,244 | INFO | 🎯 Processo concluído com sucesso.
