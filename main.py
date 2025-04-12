@@ -7,12 +7,6 @@ from utils.notifier import send_discord_alert
 from config.settings import API_BASE_URL, API_KEY
 from scheduler import start_scheduler
 
-required_vars = [API_BASE_URL, API_KEY]
-
-for var in required_vars:
-    if not var:
-        raise EnvironmentError(f"🚨 Variável de ambiente obrigatória não definida: {var}")
-
 logger = setup_logger()
 
 def run_etl():
