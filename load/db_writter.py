@@ -1,13 +1,14 @@
+import os
 import psycopg2
 from psycopg2.extras import execute_values
 
 # Configurações da conexão (ajuste conforme seu ambiente)
 DB_CONFIG = {
-    "host": "localhost",
-    "port": 5432,
-    "dbname": "safabet",
-    "user": "postgres",
-    "password": "postgres"
+    "host": os.getenv("DB_HOST"),
+    "port": os.getenv("DB_PORT"),
+    "dbname": os.getenv("DB_NAME"),
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD")
 }
 
 TABLE_NAME = "fixtures"
