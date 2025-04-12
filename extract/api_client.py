@@ -27,13 +27,13 @@ def get_brasileirao_league_id():
 
 def get_fixtures_for_week(league_id, season):
     today = datetime.utcnow().date()
-    next_sunday = today + timedelta(days=(6 - today.weekday()))
-    next_monday = next_sunday + timedelta(days=1)
+    next_monday = today + timedelta(days=(0 - today.weekday()))
+    next_sunday = next_monday + timedelta(days=13)
 
     params = {
         "league": league_id,
         "season": season,
-        "from": today.strftime("%Y-%m-%d"),
+        "from": next_monday.strftime("%Y-%m-%d"),
         "to": next_sunday.strftime("%Y-%m-%d")
     }
 
