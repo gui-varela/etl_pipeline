@@ -1,12 +1,11 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
-from main import main
+# scheduler.py
 
-def start_scheduler():
-    scheduler = BlockingScheduler()
-    scheduler.add_job(main, 'cron', hour=0, minute=0)
-    
-    print("Scheduler iniciado. ETL será executado diariamente à meia-noite.")
-    scheduler.start()
+import schedule
+import time
 
-if __name__ == "__main__":
-    start_scheduler()
+def start_scheduler(job_function, logger, schedule_time="08:00"):
+    schedule.every(1).minutes.do(job_function)
+    logger.info(f"⏰ Agendador iniciado. Aguardando a próxima execução diária às {schedule_time}.")
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
