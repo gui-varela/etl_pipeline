@@ -37,7 +37,7 @@ def run_etl():
         send_discord_alert("Todos os dados foram processados e gravados com sucesso!")
     except Exception as e:
         logger.error(f"❌ Erro na execução do ETL: {e}")
-        send_discord_alert(f"🚨 Falha na rotina ETL: {e}")
+        send_discord_alert(f"🚨 Falha na rotina ETL: {e}", success=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Executa a rotina ETL ou inicia o agendador diário.")
