@@ -2,7 +2,7 @@ name: Run ETL Job
 
 on:
   schedule:
-    - cron: "20 0 * * *"
+    - cron: "45 2 * * *"
   workflow_dispatch:  # Permite executar manualmente via GitHub
 
 jobs:
@@ -24,15 +24,32 @@ jobs:
           pip install -r requirements.txt
 
       - name: 🔐 Configurar variáveis de ambiente
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
-          echo "API_BASE_URL=${{ secrets.API_BASE_URL }}" >> $GITHUB_ENV
-          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
-          echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
-          echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
-          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
-          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
-          echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> $GITHUB_ENV
+          # Verifica se as secrets estão definidas (sem mostrar os valores)
+          if [ -z "$API_BASE_URL" ]; then echo "Aviso: API_BASE_URL não está definida"; fi
+          if [ -z "$API_KEY" ]; then echo "Aviso: API_KEY não está definida"; fi
+          if [ -z "$DB_HOST" ]; then echo "Aviso: DB_HOST não está definida"; fi
+          if [ -z "$DB_USER" ]; then echo "Aviso: DB_USER não está definida"; fi
+          if [ -z "$DB_PASSWORD" ]; then echo "Aviso: DB_PASSWORD não está definida"; fi
+          if [ -z "$DB_NAME" ]; then echo "Aviso: DB_NAME não está definida"; fi
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then echo "Aviso: DISCORD_WEBHOOK_URL não está definida"; fi
 
       - name: 🚀 Rodar o ETL
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           python main.py
